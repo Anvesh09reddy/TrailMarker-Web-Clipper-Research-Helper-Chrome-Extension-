@@ -1,0 +1,119 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 15px;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 380px; /* A bit wider for new features */
+    min-height: 100vh;
+}
+
+.header {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+}
+
+/* NEW: Styles for the create thread controls */
+.controls {
+    display: flex;
+    gap: 8px;
+}
+
+#new-thread-name {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#add-thread-btn {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#add-thread-btn:hover { background-color: #0056b3; }
+
+.thread {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.thread-header { /* NEW: Flexbox for thread title and buttons */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.thread-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #005A9C;
+    margin: 0;
+}
+
+.thread-actions button { /* NEW: Style for action buttons */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 8px;
+    opacity: 0.6;
+}
+.thread-actions button:hover { opacity: 1; }
+
+.snippet {
+    border-top: 1px solid #eee;
+    padding: 12px 0;
+}
+.thread div.snippet:first-of-type { border-top: none; padding-top: 0; }
+.thread div.snippet:last-of-type { padding-bottom: 0; }
+
+
+.snippet-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+.snippet-source a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 12px;
+    cursor: pointer; /* Important for JS-handled links */
+}
+.snippet-source a:hover { text-decoration: underline; }
+
+/* NEW: Styles for notes */
+.snippet-note {
+    width: calc(100% - 16px);
+    padding: 5px 8px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    background-color: #fcfce1;
+}
+
+#threads-container:empty::after {
+    content: "No threads created yet. Use the form above to create your first thread.";
+    display: block;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    padding: 20px;
+}
